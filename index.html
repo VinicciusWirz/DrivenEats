@@ -13,7 +13,7 @@
 </head>
 <body>
     <content id="overlay" class="hide">
-        <div>
+        <div data-test="confirm-order-modal">
             <h1>Confirme seu pedido</h1>
             <ul>
                 <li><p id="nome-principal">Total </p><p id="preco-principal">R$20,00</p></li>
@@ -22,8 +22,8 @@
                 <li class="total"><p>Total </p><p id="subtotal">R$20,00</p></li>
             </ul>
             <div class="buttons">
-                <a href="" target="_blank" id="btn-chkend"><button type="button"  onclick="chkoutBtnEnd();">Tudo certo, pode pedir!</button></a>
-                <button type="button" id="btn-cancel" onclick="chkoutBtnCancel();">Cancelar</button>
+                <a href="" target="_blank" id="btn-chkend"><button type="button" data-test="confirm-order-btn" onclick="chkoutBtnEnd();">Tudo certo, pode pedir!</button></a>
+                <button type="button" id="btn-cancel" data-test="cancel-order-btn" onclick="chkoutBtnCancel();">Cancelar</button>
             </div>
         </div>
     </content>
@@ -39,37 +39,37 @@
             <ul class="opcoesPrincipais">
                 <li onclick="menuPrincipal(this);" data-test="dish">
                     <img src="./assets/pratos/frango_yin_yang.png" alt="Fragon Yin Yang">
-                    <h4 class="classPrato">Frango Yin Yang</h4>
+                    <h4 data-test="item-name">Frango Yin Yang</h4>
                     <p>Um pouco de batata, um pouco de salada</p>
-                    <p class="price">R$ 14,90</p>
+                    <p class="price" data-test="item-price">R$ 14,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuPrincipal(this);" data-test="dish">
                     <img src="./assets/pratos/carne_yin_yang.png" alt="Carne Yin Yang">
-                    <h4 class="classPrato">Carne Yin Yang</h4>
+                    <h4 data-test="item-name">Carne Yin Yang</h4>
                     <p>Uma tigela de carne, arroz colorido, molho agridoce, batatas e pimentão vermelho</p>
-                    <p class="price">R$ 17,90</p>
+                    <p class="price" data-test="item-price">R$ 17,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuPrincipal(this);" data-test="dish">
                     <img src="./assets/pratos/yakisoba_vegano.png" alt="Yakisoba Vegano">
-                    <h4 class="classPrato">Yakisoba Vegano</h4>
+                    <h4 data-test="item-name">Yakisoba Vegano</h4>
                     <p>Vem só o macarrão mesmo</p>
-                    <p class="price">R$ 23,90</p>
+                    <p class="price" data-test="item-price">R$ 23,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuPrincipal(this);" data-test="dish">
                     <img src="./assets/pratos/miojo.png" alt="Miojo Artesanal">
-                    <h4>Miojo Artesanal</h4>
+                    <h4 data-test="item-name">Miojo Artesanal</h4>
                     <p>Miojo, molho secreto e carne de porco</p>
-                    <p class="price">R$ 34,90</p>
+                    <p class="price" data-test="item-price">R$ 34,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuPrincipal(this);" data-test="dish">
                     <img src="./assets/pratos/frango_fit.png" alt="Frango Fit">
-                    <h4 class="classPrato">Frango Fit</h4>
+                    <h4 data-test="item-name">Frango Fit</h4>
                     <p>Ovos de codorna e arroz branco</p>
-                    <p class="price">R$ 11,90</p>
+                    <p class="price" data-test="item-price">R$ 11,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
             </ul>
@@ -79,37 +79,37 @@
             <ul class="opcoesBebidas">
                 <li onclick="menuBebidas(this);" data-test="drink">
                     <img src="./assets/bebidas/coca-cola.png" alt="Coca-Cola">
-                    <h4 class="classPrato">Coca-cola</h4>
+                    <h4 data-test="item-name">Coca-cola</h4>
                     <p>Lata 350ml</p>
-                    <p class="price">R$ 3,90</p>
+                    <p class="price" data-test="item-price">R$ 3,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuBebidas(this);" data-test="drink">
                     <img src="./assets/bebidas/guarana.png" alt="Guarana">
-                    <h4 class="classPrato">Guaraná</h4>
+                    <h4 data-test="item-name">Guaraná</h4>
                     <p>Lata 350ml</p>
-                    <p class="price">R$ 4,90</p>
+                    <p class="price" data-test="item-price">R$ 4,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li  onclick="menuBebidas(this);" data-test="drink">
                     <img src="./assets/bebidas/guarana-jesus.png" alt="Guarana Jesus">
-                    <h4 class="classPrato">Guaraná Jesus</h4>
+                    <h4 data-test="item-name">Guaraná Jesus</h4>
                     <p>Lata 350ml</p>
-                    <p class="price">R$ 5,90</p>
+                    <p class="price" data-test="item-price">R$ 5,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuBebidas(this);" data-test="drink">
                     <img src="./assets/bebidas/mineirinho.png" alt="Mineirinho">
-                    <h4 class="classPrato">Mineirinho</h4>
+                    <h4 data-test="item-name">Mineirinho</h4>
                     <p>Garrafinha 600ml</p>
-                    <p class="price">R$ 8,90</p>
+                    <p class="price" data-test="item-price">R$ 8,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuBebidas(this);" data-test="drink">
                     <img src="./assets/bebidas/dr-pepper.png" alt="Dr Pepper">
-                    <h4 class="classPrato">Doutor Pimenta</h4>
+                    <h4 data-test="item-name">Doutor Pimenta</h4>
                     <p>Lata 350ml - Produto Importado</p>
-                    <p class="price">R$ 9,90</p>
+                    <p class="price" data-test="item-price">R$ 9,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
             </ul>
@@ -119,44 +119,44 @@
             <ul class="opcoesSobremesas">
                 <li onclick="menuSobremesas(this);" data-test="dessert">
                     <img src="./assets/sobremesas/pudim.png" alt="Pudim">
-                    <h4 class="classPrato">Pudim</h4>
+                    <h4 data-test="item-name">Pudim</h4>
                     <p>Pudim de leite (contem leite)</p>
-                    <p class="price">R$ 7,90</p>
+                    <p class="price" data-test="item-price">R$ 7,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuSobremesas(this);" data-test="dessert">
                     <img src="./assets/sobremesas/pave.png" alt="Pave">
-                    <h4 class="classPrato">Pavê</h4>
+                    <h4 data-test="item-name">Pavê</h4>
                     <p>Não é para comer</p>
-                    <p class="price">R$ 6,90</p>
+                    <p class="price" data-test="item-price">R$ 6,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuSobremesas(this);" data-test="dessert">
                     <img src="./assets/sobremesas/sorvete.png" alt="Sorvete">
-                    <h4 class="classPrato">Sorvete</h4>
+                    <h4 data-test="item-name">Sorvete</h4>
                     <p>Sorvete de flocos (contem leite)</p>
-                    <p class="price">R$ 9,90</p>
+                    <p class="price" data-test="item-price">R$ 9,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuSobremesas(this);" data-test="dessert">
                     <img src="./assets/sobremesas/torta-alema.png" alt="Torta Alemã">
-                    <h4 class="classPrato">Torta Alemã</h4>
+                    <h4 data-test="item-name">Torta Alemã</h4>
                     <p>Direto da Alemanha</p>
-                    <p class="price">R$ 18,90</p>
+                    <p class="price" data-test="item-price">R$ 18,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
                 <li onclick="menuSobremesas(this);" data-test="dessert">
                     <img src="./assets/sobremesas/mousse.png" alt="Mousse">
-                    <h4 class="classPrato">Mousse</h4>
+                    <h4 data-test="item-name">Mousse</h4>
                     <p>Mousse cremoso, sabor misterioso</p>
-                    <p class="price">R$ 7,50</p>
+                    <p class="price" data-test="item-price">R$ 7,50</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
             </ul>
         </article>
     </main>
     <footer>
-        <button type="button" disabled id="checkout" onclick="chkoutBtn();">
+        <button type="button" disabled id="checkout" onclick="chkoutBtn();" data-test="order-btn">
             Selecione os 3 itens para fechar o pedido
         </button>
     </footer>
