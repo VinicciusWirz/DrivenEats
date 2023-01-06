@@ -139,7 +139,7 @@ function chkoutBtnCancel(){
 
 //Função para encerrar o pedido e encaminhar para o Whatsapp
 function chkoutBtnEnd(){
-    subTotal = subTotal;
+    subTotal = subTotal.toFixed(2);
     let url ="https://wa.me/5555555555555?text=";
     let whatsappText = encodeURIComponent(`Olá, gostaria de fazer o pedido:\n- Prato: ${nomePrincipal}\n- Bebida: ${nomeBebida}\n- Sobremesa: ${nomeSobremesa}\nTotal: R$ ${subTotal}\n\nNome: ${clientName}\nEndereço: ${clientAddress}`);
 
