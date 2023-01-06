@@ -5,6 +5,7 @@ let nomeBebida = "";
 let precoBebida = 0;
 let nomeSobremesa = "";
 let precoSobremesa = 0;
+let subTotal = 0;
 //let endereco = "";
 //let nome = "";
 
@@ -37,6 +38,7 @@ function menuPrincipal(selecionado){
     precoPrincipal = Number(selecionado.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.')).toFixed(2);
     nomePrincipal = selecionado.querySelector('h4').innerHTML;
    }
+   checkingOut();
 }
 //Função para selecionar os items do menu de Bebidas
 function menuBebidas(selecionado){
@@ -67,6 +69,7 @@ function menuBebidas(selecionado){
      precoBebida = Number(selecionado.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.')).toFixed(2);
      nomeBebida = selecionado.querySelector('h4').innerHTML;
     }
+    checkingOut();
 }
 //Função para selecionar os items do menu de Sobremesas
 function menuSobremesas(selecionado){
@@ -97,4 +100,35 @@ function menuSobremesas(selecionado){
      precoSobremesa = Number(selecionado.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.')).toFixed(2);
      nomeSobremesa = selecionado.querySelector('h4').innerHTML;
     }
+    checkingOut();
+}
+//Função para alterar o botão de "Fechar pedido"
+function checkingOut(){
+    if(numeroSelecoes.length === 3){
+        document.getElementById('checkout').classList.add('chk-available');
+        document.getElementById('checkout').innerHTML = "Fechar pedido";
+        document.getElementById('checkout').removeAttribute('disabled');
+    } else {
+        document.getElementById('checkout').classList.remove('chk-available');
+        document.getElementById('checkout').innerHTML = "Selecione os 3 itens para fechar o pedido";
+        document.getElementById('checkout').setAttribute('disabled', '');
+    }
+}
+//Função para abrir o overlay de revisar o pedido e aplicar mudanças de preços
+function chkoutBtn(){
+    if(numeroSelecoes.length === 3){
+        subTotal = Number(precoPrincipal) + Number(precoBebida) + Number(precoSobremesa);
+        document.getElementById('overlay').classList.remove('hide');
+        document.getElementById('nome-principal').innerHTML = nomePrincipal;
+        document.getElementById('preco-principal').innerHTML = precoPrincipal.toString().replace('.', ',');
+        document.getElementById('nome-bebida').innerHTML = nomeBebida;
+        document.getElementById('preco-bebida').innerHTML = precoBebida.toString().replace('.', ',');
+        document.getElementById('nome-sobremesa').innerHTML = nomeSobremesa;
+        document.getElementById('preco-sobremesa').innerHTML = precoSobremesa.toString().replace('.', ',');
+        document.getElementById('subtotal').innerHTML = "R$ " + subTotal.toFixed(2).toString().replace('.', ',');
+    }
+}
+//Função do botão cancelar do overlay de revisar o pedido
+function chkoutBtnCancel(){
+    document.getElementById('overlay').classList.add('hide');
 }
