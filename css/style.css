@@ -58,22 +58,7 @@ content>div>.buttons{
     display: flex;
     flex-direction: column;
 }
-content>div>.buttons>button{
-    background: #FFFFFF;
-    border-radius: 100px;
-    width: 329px;
-    height: 52px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 26px;
-    text-align: center;
-    letter-spacing: 0.018em;
-    border:none;
-    color: #50D074;
-}
-#btn-chkend{
+#overlay>div>div>a>button{
     background: #FFFFFF;
     border-radius: 100px;
     width: 329px;
@@ -98,6 +83,7 @@ content>div>.buttons>#btn-cancel{
     line-height: 23px;
     text-align: center;
     letter-spacing: 0.018em;
+    border: none;
     color: #FFFFFF;
     background: none;
 }

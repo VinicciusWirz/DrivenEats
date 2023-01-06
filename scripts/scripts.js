@@ -6,8 +6,6 @@ let precoBebida = 0;
 let nomeSobremesa = "";
 let precoSobremesa = 0;
 let subTotal = 0;
-//let endereco = "";
-//let nome = "";
 
 //Função para selecionar os items do menu de Pratos Principais
 function menuPrincipal(selecionado){
@@ -117,7 +115,7 @@ function checkingOut(){
 //Função para abrir o overlay de revisar o pedido e aplicar mudanças de preços
 function chkoutBtn(){
     if(numeroSelecoes.length === 3){
-        subTotal = Number(precoPrincipal) + Number(precoBebida) + Number(precoSobremesa);
+        subTotal = (Number(precoPrincipal) + Number(precoBebida) + Number(precoSobremesa));
         document.getElementById('overlay').classList.remove('hide');
         document.getElementById('nome-principal').innerHTML = nomePrincipal;
         document.getElementById('preco-principal').innerHTML = precoPrincipal.toString().replace('.', ',');
@@ -131,4 +129,21 @@ function chkoutBtn(){
 //Função do botão cancelar do overlay de revisar o pedido
 function chkoutBtnCancel(){
     document.getElementById('overlay').classList.add('hide');
+}
+//Função para encerrar o pedido e encaminhar para o Whatsapp
+function chkoutBtnEnd(){
+    let clientName = prompt('Digite o seu nome');
+    let clientAddress = prompt('Digite o seu endereço');
+    let url ="https://wa.me/5555555555555?text=";
+    let whatsappText = encodeURIComponent(`Olá, gostaria de fazer o pedido:
+- Prato: ${nomePrincipal}
+- Bebida: ${nomeBebida}
+- Sobremesa: ${nomeSobremesa}
+Total: R$ ${subTotal.toFixed(2)}
+    
+Nome: ${clientName}
+Endereço: ${clientAddress}`);
+
+    let link = url + whatsappText;
+    document.getElementById('btn-chkend').setAttribute('href', link);
 }
