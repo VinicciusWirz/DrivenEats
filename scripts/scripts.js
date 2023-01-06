@@ -5,8 +5,8 @@ let nomeBebida = "";
 let precoBebida = 0;
 let nomeSobremesa = "";
 let precoSobremesa = 0;
-let endereco = "";
-let nome = "";
+//let endereco = "";
+//let nome = "";
 
 //Função para selecionar os items do menu de Pratos Principais
 function menuPrincipal(selecionado){
