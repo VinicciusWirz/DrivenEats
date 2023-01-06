@@ -35,7 +35,7 @@ function menuPrincipal(selecionado){
     if(!numeroSelecoes.includes(1)){
         numeroSelecoes.push(1);
     }
-    precoPrincipal = Number(selecionado.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.')).toFixed(2);
+    precoPrincipal = Number(selecionado.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.'));
     nomePrincipal = selecionado.querySelector('h4').innerHTML;
    }
    checkingOut();
@@ -66,7 +66,7 @@ function menuBebidas(selecionado){
      if(!numeroSelecoes.includes(2)){
          numeroSelecoes.push(2);
      }
-     precoBebida = Number(selecionado.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.')).toFixed(2);
+     precoBebida = Number(selecionado.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.'));
      nomeBebida = selecionado.querySelector('h4').innerHTML;
     }
     checkingOut();
@@ -97,7 +97,7 @@ function menuSobremesas(selecionado){
      if(!numeroSelecoes.includes(3)){
          numeroSelecoes.push(3);
      }
-     precoSobremesa = Number(selecionado.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.')).toFixed(2);
+     precoSobremesa = Number(selecionado.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.'));
      nomeSobremesa = selecionado.querySelector('h4').innerHTML;
     }
     checkingOut();
@@ -121,14 +121,14 @@ function chkoutBtn(){
             clientName = prompt('Digite o seu nome');
             clientAddress = prompt('Digite o seu endereço');
         }
-        subTotal = (Number(precoPrincipal) + Number(precoBebida) + Number(precoSobremesa));
+        subTotal = precoPrincipal + precoBebida + precoSobremesa;
         document.getElementById('overlay').classList.remove('hide');
         document.getElementById('nome-principal').innerHTML = nomePrincipal;
-        document.getElementById('preco-principal').innerHTML = precoPrincipal.toString().replace('.', ',');
+        document.getElementById('preco-principal').innerHTML = precoPrincipal.toFixed(2).toString().replace('.', ',');
         document.getElementById('nome-bebida').innerHTML = nomeBebida;
-        document.getElementById('preco-bebida').innerHTML = precoBebida.toString().replace('.', ',');
+        document.getElementById('preco-bebida').innerHTML = precoBebida.toFixed(2).toString().replace('.', ',');
         document.getElementById('nome-sobremesa').innerHTML = nomeSobremesa;
-        document.getElementById('preco-sobremesa').innerHTML = precoSobremesa.toString().replace('.', ',');
+        document.getElementById('preco-sobremesa').innerHTML = precoSobremesa.toFixed(2).toString().replace('.', ',');
         document.getElementById('subtotal').innerHTML = "R$ " + subTotal.toFixed(2).toString().replace('.', ',');
     }
 }
@@ -136,9 +136,10 @@ function chkoutBtn(){
 function chkoutBtnCancel(){
     document.getElementById('overlay').classList.add('hide');
 }
+
 //Função para encerrar o pedido e encaminhar para o Whatsapp
 function chkoutBtnEnd(){
-    subTotal = subTotal.toFixed(2);
+    subTotal = subTotal;
     let url ="https://wa.me/5555555555555?text=";
     let whatsappText = encodeURIComponent(`Olá, gostaria de fazer o pedido:\n- Prato: ${nomePrincipal}\n- Bebida: ${nomeBebida}\n- Sobremesa: ${nomeSobremesa}\nTotal: R$ ${subTotal}\n\nNome: ${clientName}\nEndereço: ${clientAddress}`);
 
