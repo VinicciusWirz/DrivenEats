@@ -72,6 +72,7 @@ content>div>.buttons{
     letter-spacing: 0.018em;
     border:none;
     color: #50D074;
+    cursor: pointer;
 }
 content>div>.buttons>#btn-cancel{
     width: 329px;
@@ -86,6 +87,7 @@ content>div>.buttons>#btn-cancel{
     border: none;
     color: #FFFFFF;
     background: none;
+    cursor: pointer;
 }
 header{
     position:sticky;
@@ -251,4 +253,5 @@ main>article>ul>li>ion-icon{
 /* Finalizar pedido */
 .chk-available{
     background: #32B72F;
+    cursor: pointer;
 }
