@@ -4,17 +4,14 @@ const noInput = 'Não fornecido';
 let clientName = noInput;
 let clientAddress = noInput;
 //Função para selecionar Items do menu
-function menuCall(touch) {
+function menuCall(touch, itemType) {
     const menuSelected = 'menu-selected';
     const elementPastSelected = touch.parentElement.querySelector('.' + menuSelected);
     const touchClassCheck = elementPastSelected === touch;
     const placeNameInArray = touch.querySelector('h4').innerHTML;
     const placePriceInArray = Number(touch.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.'));
-    if (touch.getAttribute('data-test') === 'dish') {
-        if (arrOrderData[1] !== 0) {
-            arrOrderData[0] = '';
-            arrOrderData[1] = 0;
-        }
+    //Quando o item retorar a string 'dish', seleciona um item do principal e guarda as informações na arrOrderData
+    if (itemType === 'dish') {
         if (elementPastSelected !== null) {
             elementPastSelected.classList.remove(menuSelected);
             elementPastSelected.querySelector('ion-icon').classList.add('hide');
@@ -22,6 +19,8 @@ function menuCall(touch) {
         if (touchClassCheck) {
             touch.classList.remove(menuSelected);
             touch.querySelector('ion-icon').classList.add('hide');
+            arrOrderData[0] = '';
+            arrOrderData[1] = 0;
         } else {
             touch.classList.add(menuSelected);
             touch.querySelector('ion-icon').classList.remove('hide');
@@ -31,11 +30,8 @@ function menuCall(touch) {
             arrOrderData[1] = placePriceInArray;
         }
     }
-    if (touch.getAttribute('data-test') === 'drink') {
-        if (arrOrderData[3] !== 0) {
-            arrOrderData[2] = '';
-            arrOrderData[3] = 0;
-        }
+    //Quando o item retorar a string 'drink', seleciona um item da bebida e guarda as informações na arrOrderData
+    if (itemType === 'drink') {
         if (elementPastSelected !== null) {
             elementPastSelected.classList.remove(menuSelected);
             elementPastSelected.querySelector('ion-icon').classList.add('hide');
@@ -43,6 +39,8 @@ function menuCall(touch) {
         if (touchClassCheck) {
             touch.classList.remove(menuSelected);
             touch.querySelector('ion-icon').classList.add('hide');
+            arrOrderData[2] = '';
+            arrOrderData[3] = 0;
         } else {
             touch.classList.add(menuSelected);
             touch.querySelector('ion-icon').classList.remove('hide');
@@ -52,11 +50,8 @@ function menuCall(touch) {
             arrOrderData[3] = placePriceInArray;
         }
     }
-    if (touch.getAttribute('data-test') === 'dessert') {
-        if (arrOrderData[5] !== 0) {
-            arrOrderData[4] = '';
-            arrOrderData[5] = 0;
-        }
+    //Quando o item retorar a string 'dessert', seleciona um item da sobremesa e guarda as informações na arrOrderData
+    if (itemType === 'dessert') {
         if (elementPastSelected !== null) {
             elementPastSelected.classList.remove(menuSelected);
             elementPastSelected.querySelector('ion-icon').classList.add('hide');
@@ -64,6 +59,8 @@ function menuCall(touch) {
         if (touchClassCheck) {
             touch.classList.remove(menuSelected);
             touch.querySelector('ion-icon').classList.add('hide');
+            arrOrderData[4] = '';
+            arrOrderData[5] = 0;
         } else {
             touch.classList.add(menuSelected);
             touch.querySelector('ion-icon').classList.remove('hide');
