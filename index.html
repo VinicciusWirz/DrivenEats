@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,26 +12,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-
 </head>
+
 <body>
     <content id="overlay" class="hide">
         <div data-test="confirm-order-modal">
             <h1>Confirme seu pedido</h1>
             <ul>
                 <li>
-                    <p id="nome-principal">Total </p><p id="preco-principal">R$20,00</p>
+                    <p id="nome-principal">Total </p>
+                    <p id="preco-principal">R$20,00</p>
                 </li>
                 <li>
-                    <p id="nome-bebida">Total </p><p id="preco-bebida">R$20,00</p>
+                    <p id="nome-bebida">Total </p>
+                    <p id="preco-bebida">R$20,00</p>
                 </li>
                 <li>
-                    <p id="nome-sobremesa">Total </p><p id="preco-sobremesa">R$20,00</p>
+                    <p id="nome-sobremesa">Total </p>
+                    <p id="preco-sobremesa">R$20,00</p>
                 </li>
                 <li class="total">
-                    <p>Total </p><p id="subtotal">R$20,00</p>
+                    <p>Total </p>
+                    <p id="subtotal">R$20,00</p>
                 </li>
             </ul>
             <div class="buttons">
@@ -55,35 +62,35 @@
         <article> <!-- Prato Principal -->
             <h3>Primeiro, seu prato</h3>
             <ul class="opcoesPrincipais">
-                <li onclick="menuPrincipal(this);" data-test="dish">
+                <li onclick="menuCall(this);" data-test="dish">
                     <img src="./assets/pratos/frango_yin_yang.png" alt="Fragon Yin Yang">
                     <h4 data-test="item-name">Frango Yin Yang</h4>
                     <p>Um pouco de batata, um pouco de salada</p>
                     <p class="price" data-test="item-price">R$ 11,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuPrincipal(this);" data-test="dish">
+                <li onclick="menuCall(this);" data-test="dish">
                     <img src="./assets/pratos/carne_yin_yang.png" alt="Carne Yin Yang">
                     <h4 data-test="item-name">Carne Yin Yang</h4>
                     <p>Uma tigela de carne, arroz colorido, molho agridoce, batatas e pimentão vermelho</p>
                     <p class="price" data-test="item-price">R$ 17,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuPrincipal(this);" data-test="dish">
+                <li onclick="menuCall(this);" data-test="dish">
                     <img src="./assets/pratos/yakisoba_vegano.png" alt="Yakisoba Vegano">
                     <h4 data-test="item-name">Yakisoba Vegano</h4>
                     <p>Vem só o macarrão mesmo</p>
                     <p class="price" data-test="item-price">R$ 23,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuPrincipal(this);" data-test="dish">
+                <li onclick="menuCall(this);" data-test="dish">
                     <img src="./assets/pratos/miojo.png" alt="Miojo Artesanal">
                     <h4 data-test="item-name">Miojo Artesanal</h4>
                     <p>Miojo, molho secreto e carne de porco</p>
                     <p class="price" data-test="item-price">R$ 34,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuPrincipal(this);" data-test="dish">
+                <li onclick="menuCall(this);" data-test="dish">
                     <img src="./assets/pratos/frango_fit.png" alt="Frango Fit">
                     <h4 data-test="item-name">Frango Fit</h4>
                     <p>Ovos de codorna e arroz branco</p>
@@ -95,35 +102,35 @@
         <article> <!-- Bebida -->
             <h3>Agora, sua bebida</h3>
             <ul class="opcoesBebidas">
-                <li onclick="menuBebidas(this);" data-test="drink">
+                <li onclick="menuCall(this);" data-test="drink">
                     <img src="./assets/bebidas/mineirinho.png" alt="Mineirinho">
                     <h4 data-test="item-name">Mineirinho</h4>
                     <p>Garrafinha 600ml</p>
                     <p class="price" data-test="item-price">R$ 8,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuBebidas(this);" data-test="drink">
+                <li onclick="menuCall(this);" data-test="drink">
                     <img src="./assets/bebidas/coca-cola.png" alt="Coca-Cola">
                     <h4 data-test="item-name">Coca-cola</h4>
                     <p>Lata 350ml</p>
                     <p class="price" data-test="item-price">R$ 3,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuBebidas(this);" data-test="drink">
+                <li onclick="menuCall(this);" data-test="drink">
                     <img src="./assets/bebidas/guarana.png" alt="Guarana">
                     <h4 data-test="item-name">Guaraná</h4>
                     <p>Lata 350ml</p>
                     <p class="price" data-test="item-price">R$ 4,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li  onclick="menuBebidas(this);" data-test="drink">
+                <li onclick="menuCall(this);" data-test="drink">
                     <img src="./assets/bebidas/guarana-jesus.png" alt="Guarana Jesus">
                     <h4 data-test="item-name">Guaraná Jesus</h4>
                     <p>Lata 350ml</p>
                     <p class="price" data-test="item-price">R$ 5,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuBebidas(this);" data-test="drink">
+                <li onclick="menuCall(this);" data-test="drink">
                     <img src="./assets/bebidas/dr-pepper.png" alt="Dr Pepper">
                     <h4 data-test="item-name">Doutor Pimenta</h4>
                     <p>Lata 350ml - Produto Importado</p>
@@ -135,35 +142,35 @@
         <article> <!-- Sobremesa -->
             <h3>Por fim, sua sobremesa</h3>
             <ul class="opcoesSobremesas">
-                <li onclick="menuSobremesas(this);" data-test="dessert">
+                <li onclick="menuCall(this);" data-test="dessert">
                     <img src="./assets/sobremesas/torta-alema.png" alt="Torta Alemã">
                     <h4 data-test="item-name">Torta Alemã</h4>
                     <p>Direto da Alemanha</p>
-                    <p class="price" data-test="item-price">R$ 18,90</p>
+                    <p class="price" data-test="item-price">R$ 11,00</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuSobremesas(this);" data-test="dessert">
+                <li onclick="menuCall(this);" data-test="dessert">
                     <img src="./assets/sobremesas/pudim.png" alt="Pudim">
                     <h4 data-test="item-name">Pudim</h4>
                     <p>Pudim de leite (contem leite)</p>
                     <p class="price" data-test="item-price">R$ 7,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuSobremesas(this);" data-test="dessert">
+                <li onclick="menuCall(this);" data-test="dessert">
                     <img src="./assets/sobremesas/pave.png" alt="Pave">
                     <h4 data-test="item-name">Pavê</h4>
                     <p>Não é para comer</p>
                     <p class="price" data-test="item-price">R$ 6,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuSobremesas(this);" data-test="dessert">
+                <li onclick="menuCall(this);" data-test="dessert">
                     <img src="./assets/sobremesas/sorvete.png" alt="Sorvete">
                     <h4 data-test="item-name">Sorvete</h4>
                     <p>Sorvete de flocos (contem leite)</p>
                     <p class="price" data-test="item-price">R$ 9,90</p>
                     <ion-icon name="checkmark-circle" class="hide"></ion-icon>
                 </li>
-                <li onclick="menuSobremesas(this);" data-test="dessert">
+                <li onclick="menuCall(this);" data-test="dessert">
                     <img src="./assets/sobremesas/mousse.png" alt="Mousse">
                     <h4 data-test="item-name">Mousse</h4>
                     <p>Mousse cremoso, sabor misterioso</p>
@@ -182,4 +189,5 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

@@ -1,96 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-*{
+
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #e5e5e5;
     max-width: 100vw;
 }
-content{
-    position:fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.9);
-    height: 100%;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-content>div{
-    background: #50D074;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 9px;
-    width: 377px;
-    height: 353px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 21px 24px 3px;
-}
 
-content>div>ul{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-content>div>ul>li{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 13px;
-}
-content>div>h1, content>div>ul>li>p{
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 26px;
-    letter-spacing: 0.018em;
-    color: #FFFFFF;
-}
-content>div>h1, content>div>ul>.total>p {
-    font-weight: 700;
-}
-content>div>.buttons{
-    display: flex;
-    flex-direction: column;
-}
-#overlay>div>div>a>button{
-    background: #FFFFFF;
-    border-radius: 100px;
-    width: 329px;
-    height: 52px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 26px;
-    text-align: center;
-    letter-spacing: 0.018em;
-    border:none;
-    color: #50D074;
-    cursor: pointer;
-}
-content>div>.buttons>#btn-cancel{
-    width: 329px;
-    height: 52px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
-    text-align: center;
-    letter-spacing: 0.018em;
-    border: none;
-    color: #FFFFFF;
-    background: none;
-    cursor: pointer;
-}
-header{
-    position:sticky;
+header {
+    position: sticky;
     top: 0;
     left: 0;
     height: 92px;
@@ -102,11 +23,13 @@ header{
     align-items: center;
     padding-left: 21px;
 }
-header>div{
-    display:flex;
+
+header>div {
+    display: flex;
     flex-direction: column;
 }
-header>div>h1{
+
+header>div>h1 {
     font-family: 'Righteous', cursive;
     font-style: normal;
     font-weight: 400;
@@ -114,7 +37,8 @@ header>div>h1{
     line-height: 55px;
     color: #FFFFFF;
 }
-header>div>h2{
+
+header>div>h2 {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -122,11 +46,13 @@ header>div>h2{
     line-height: 21px;
     color: #FFFFFF;
 }
-main{
+
+main {
     padding-top: 31px;
     max-width: 100%;
 }
-main>article>h3{
+
+main>article>h3 {
     font-family: 'Righteous', cursive;
     font-style: normal;
     font-weight: 400;
@@ -137,20 +63,25 @@ main>article>h3{
     margin-bottom: 17px;
     padding-left: 19px;
 }
-main>article>ul{
+
+main>article>ul {
     display: flex;
     overflow-x: scroll;
     padding-left: 19px;
     margin-bottom: 27px;
     /*Esconde barra de scroll em Microsoft e Firefox*/
-    scrollbar-width: none; /*Firefox*/
-    -ms-overflow-style: none; /*IE e Edge*/
+    scrollbar-width: none;
+    /*Firefox*/
+    -ms-overflow-style: none;
+    /*IE e Edge*/
 }
+
 main>article>ul::-webkit-scrollbar {
     display: none;
     /*Esconde barra de scroll em Chromium*/
 }
-main>article>ul>li{
+
+main>article>ul>li {
     background: #FFFFFF;
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
@@ -162,19 +93,20 @@ main>article>ul>li{
     flex-direction: column;
     justify-content: space-between;
     padding: 13px 9px;
-    border:5px transparent solid;
+    border: 5px transparent solid;
     cursor: pointer;
     position: relative;
 }
 
-main>article>ul>li>img{
+main>article>ul>li>img {
     width: 144px;
     height: 87px;
     border-radius: 4px;
-    object-fit:scale-down;
+    object-fit: scale-down;
     align-self: center;
 }
-main>article>ul>li>h4{
+
+main>article>ul>li>h4 {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -182,7 +114,8 @@ main>article>ul>li>h4{
     line-height: 19px;
     color: #333333;
 }
-main>article>ul>li>p{
+
+main>article>ul>li>p {
     max-width: 147px;
     height: 39px;
     font-family: 'Roboto', sans-serif;
@@ -192,9 +125,10 @@ main>article>ul>li>p{
     line-height: 18px;
     color: #A6A6A6;
     text-overflow: ellipsis;
-    overflow:hidden;
+    overflow: hidden;
 }
-main>article>ul>li>.price{
+
+main>article>ul>li>.price {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -204,7 +138,8 @@ main>article>ul>li>.price{
     max-width: none;
     height: auto;
 }
-footer{
+
+footer {
     position: sticky;
     width: 100%;
     height: 92px;
@@ -215,13 +150,14 @@ footer{
     align-items: center;
     justify-content: center;
 }
-footer>button{
+
+footer>button {
     width: 364px;
     height: 61px;
     padding: 8px 85px 8px 85px;
     background: #CBCBCB;
     border-radius: 50px;
-    border:none;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -237,21 +173,116 @@ footer>button{
 }
 
 /* selecting menu*/
-main>article>ul>.menu-selected{
+main>article>ul>.menu-selected {
     border: 5px solid #32B72F;
 }
-main>article>ul>li>ion-icon{
+
+main>article>ul>li>ion-icon {
     color: #32B72F;
     position: absolute;
     font-size: 17px;
     right: 15px;
     bottom: 14px;
 }
-.hide{
-    display:none;
+
+.hide {
+    display: none;
 }
+
 /* Finalizar pedido */
-.chk-available{
+content {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+content>div {
+    background: #50D074;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    width: 377px;
+    height: 353px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 24px 3px;
+}
+
+content>div>ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+content>div>ul>li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+
+content>div>h1,
+content>div>ul>li>p {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    color: #FFFFFF;
+}
+
+content>div>h1,
+content>div>ul>.total>p {
+    font-weight: 700;
+}
+
+content>div>.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+#overlay>div>div>a>button {
+    background: #FFFFFF;
+    border-radius: 100px;
+    width: 329px;
+    height: 52px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.018em;
+    border: none;
+    color: #50D074;
+    cursor: pointer;
+}
+
+content>div>.buttons>#btn-cancel {
+    width: 329px;
+    height: 52px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.018em;
+    border: none;
+    color: #FFFFFF;
+    background: none;
+    cursor: pointer;
+}
+
+.chk-available {
     background: #32B72F;
     cursor: pointer;
 }
