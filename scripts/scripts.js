@@ -80,7 +80,7 @@ function chkoutBtnCancel() {
 }
 //Função para encerrar o pedido e encaminhar para o Whatsapp
 function chkoutBtnEnd() {
-    const subTotal = (arrOrderData[6] / 100).toFixed(2);
+    const subTotal = (arrOrderData[6] / 100).toFixed(2).replace('.', ',');
     const url = "https://wa.me/5555555555555?text=";
     const whatsappText = encodeURIComponent(`Olá, gostaria de fazer o pedido:
 - Prato: ${arrOrderData[0]}

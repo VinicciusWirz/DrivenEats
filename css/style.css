@@ -81,6 +81,12 @@ main>article>ul {
     /*IE e Edge*/
 }
 
+content>div>ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 main>article>ul::-webkit-scrollbar {
     display: none;
     /*Esconde barra de scroll em Chromium*/
@@ -219,12 +225,6 @@ content>div {
     align-items: center;
     justify-content: space-between;
     padding: 21px 24px 3px;
-}
-
-content>div>ul {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 }
 
 content>div>ul>li {
