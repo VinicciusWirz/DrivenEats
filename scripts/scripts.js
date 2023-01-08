@@ -41,7 +41,6 @@ function selectAnItem(touch) {
 function checkingOut() {
     const checkoutDocument = document.getElementById('checkout');
     arrOrderData[6] = (arrOrderData[1] * 100 + arrOrderData[3] * 100 + arrOrderData[5] * 100);
-    console.log(document.querySelectorAll('.menu-selected'))
     if (document.querySelectorAll('.menu-selected').length === 3) {
         checkoutDocument.classList.add('chk-available');
         checkoutDocument.innerHTML = "Fechar pedido";
@@ -68,12 +67,12 @@ function chkoutBtn() {
     }
     document.getElementById('overlay').classList.remove('hide');
     document.getElementById('nome-principal').innerHTML = arrOrderData[0];
-    document.getElementById('preco-principal').innerHTML = (arrOrderData[1]).toFixed(2).toString().replace('.', ',');
+    document.getElementById('preco-principal').innerHTML = (arrOrderData[1]).toFixed(2).replace('.', ',');
     document.getElementById('nome-bebida').innerHTML = arrOrderData[2];
-    document.getElementById('preco-bebida').innerHTML = (arrOrderData[3]).toFixed(2).toString().replace('.', ',');
+    document.getElementById('preco-bebida').innerHTML = (arrOrderData[3]).toFixed(2).replace('.', ',');
     document.getElementById('nome-sobremesa').innerHTML = arrOrderData[4];
-    document.getElementById('preco-sobremesa').innerHTML = (arrOrderData[5]).toFixed(2).toString().replace('.', ',');
-    document.getElementById('subtotal').innerHTML = "R$ " + (arrOrderData[6] / 100).toFixed(2).toString().replace('.', ',');
+    document.getElementById('preco-sobremesa').innerHTML = (arrOrderData[5]).toFixed(2).replace('.', ',');
+    document.getElementById('subtotal').innerHTML = "R$ " + (arrOrderData[6] / 100).toFixed(2).replace('.', ',');
 }
 //Função do botão cancelar do overlay de revisar o pedido
 function chkoutBtnCancel() {
