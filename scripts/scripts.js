@@ -5,78 +5,44 @@ let clientName = noInput;
 let clientAddress = noInput;
 //Função para selecionar Items do menu
 function menuCall(touch, itemType) {
-    const menuSelected = 'menu-selected';
-    const elementPastSelected = touch.parentElement.querySelector('.' + menuSelected);
-    const touchClassCheck = elementPastSelected === touch;
     const placeNameInArray = touch.querySelector('h4').innerHTML;
     const placePriceInArray = Number(touch.querySelector('.price').innerHTML.replace('R$ ', '').replace(',', '.'));
-    //Quando o item retorar a string 'dish', seleciona um item do principal e guarda as informações na arrOrderData
+    selectAnItem(touch);
+    //Quando o item retorar a string 'correspondente', seleciona um item e guarda as informações na arrOrderData
     if (itemType === 'dish') {
-        if (elementPastSelected !== null) {
-            elementPastSelected.classList.remove(menuSelected);
-            elementPastSelected.querySelector('ion-icon').classList.add('hide');
-        }
-        if (touchClassCheck) {
-            touch.classList.remove(menuSelected);
-            touch.querySelector('ion-icon').classList.add('hide');
-            arrOrderData[0] = '';
-            arrOrderData[1] = 0;
-        } else {
-            touch.classList.add(menuSelected);
-            touch.querySelector('ion-icon').classList.remove('hide');
-            //Adiciona nome do Dish na array
-            arrOrderData[0] = placeNameInArray;
-            //Adiciona preço do Dish na array
-            arrOrderData[1] = placePriceInArray;
-        }
+        arrOrderData[0] = placeNameInArray;
+        arrOrderData[1] = placePriceInArray;
+    } else if (itemType === 'drink') {
+        arrOrderData[2] = placeNameInArray;
+        arrOrderData[3] = placePriceInArray;
+    } else {
+        arrOrderData[4] = placeNameInArray;
+        arrOrderData[5] = placePriceInArray;
     }
-    //Quando o item retorar a string 'drink', seleciona um item da bebida e guarda as informações na arrOrderData
-    if (itemType === 'drink') {
-        if (elementPastSelected !== null) {
-            elementPastSelected.classList.remove(menuSelected);
-            elementPastSelected.querySelector('ion-icon').classList.add('hide');
-        }
-        if (touchClassCheck) {
-            touch.classList.remove(menuSelected);
-            touch.querySelector('ion-icon').classList.add('hide');
-            arrOrderData[2] = '';
-            arrOrderData[3] = 0;
-        } else {
-            touch.classList.add(menuSelected);
-            touch.querySelector('ion-icon').classList.remove('hide');
-            //Adiciona nome do Drink na array
-            arrOrderData[2] = placeNameInArray;
-            //Adiciona preço do Drink na array
-            arrOrderData[3] = placePriceInArray;
-        }
-    }
-    //Quando o item retorar a string 'dessert', seleciona um item da sobremesa e guarda as informações na arrOrderData
-    if (itemType === 'dessert') {
-        if (elementPastSelected !== null) {
-            elementPastSelected.classList.remove(menuSelected);
-            elementPastSelected.querySelector('ion-icon').classList.add('hide');
-        }
-        if (touchClassCheck) {
-            touch.classList.remove(menuSelected);
-            touch.querySelector('ion-icon').classList.add('hide');
-            arrOrderData[4] = '';
-            arrOrderData[5] = 0;
-        } else {
-            touch.classList.add(menuSelected);
-            touch.querySelector('ion-icon').classList.remove('hide');
-            //Adiciona nome do Dessert na array
-            arrOrderData[4] = placeNameInArray;
-            //Adiciona preço do Dessert na array
-            arrOrderData[5] = placePriceInArray;
-        }
-    }
-    arrOrderData[6] = (arrOrderData[1] * 100 + arrOrderData[3] * 100 + arrOrderData[5] * 100);
     checkingOut();
+}
+function selectAnItem(touch) {
+    const menuSelected = 'menu-selected';
+    const elementPastSelected = touch.parentElement.querySelector('.' + menuSelected);
+    const touchIonIcon = touch.querySelector('ion-icon').classList;
+    if (elementPastSelected !== null) {
+        elementPastSelected.classList.remove(menuSelected);
+        elementPastSelected.querySelector('ion-icon').classList.add('hide');
+    }
+    if (elementPastSelected === touch) {
+        touch.classList.remove(menuSelected);
+        touchIonIcon.add('hide');
+    } else {
+        touch.classList.add(menuSelected);
+        touchIonIcon.remove('hide');
+    }
 }
 //Função para alterar o botão de "Fechar pedido"
 function checkingOut() {
     const checkoutDocument = document.getElementById('checkout');
-    if (arrOrderData[1] !== 0 && arrOrderData[3] !== 0 && arrOrderData[5] !== 0) {
+    arrOrderData[6] = (arrOrderData[1] * 100 + arrOrderData[3] * 100 + arrOrderData[5] * 100);
+    console.log(document.querySelectorAll('.menu-selected'))
+    if (document.querySelectorAll('.menu-selected').length === 3) {
         checkoutDocument.classList.add('chk-available');
         checkoutDocument.innerHTML = "Fechar pedido";
         checkoutDocument.removeAttribute('disabled');
